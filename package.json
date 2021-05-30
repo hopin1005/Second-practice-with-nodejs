@@ -1,0 +1,34 @@
+{
+  "name": "second-practice-with-nodejs",
+  "version": "1.0.0",
+  "description": "This project is practice sync/async problem!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hopin1005/Second-practice-with-nodejs.git"
+  },
+  "author": "hopin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hopin1005/Second-practice-with-nodejs/issues"
+  },
+  "homepage": "https://github.com/hopin1005/Second-practice-with-nodejs#readme",
+  "devDependencies": {
+    "eslint": "^7.27.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  },
+  "dependencies": {
+    "async": "^3.2.0",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "fs": "0.0.1-security",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}
