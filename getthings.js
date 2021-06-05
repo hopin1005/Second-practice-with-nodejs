@@ -16,7 +16,7 @@ const userData = sequelize.define('user_datas', {
 })
 
 // async / await
-async function asyncGetthings (uid) {
+async function asyncGetthings () {
   const primaryId = 7
 
   const dataPromise = await userData.findAll({
@@ -49,14 +49,22 @@ function promiseGetthings () {
   })
 }
 
-const res2 = promiseGetthings()
+function wrapAnotherPromise(res2){
+  return new Promise(function(resolve){
+    resolve(res2);
+  })
+}
+
+var res2 = promiseGetthings();
+res2 = wrapAnotherPromise(res2);
+
 res2.then(data => {
   console.log('res2 result: ')
   console.log(data)
 })
 
-// callback????? not sure
-function callbackGetthings () {
+//callback func
+function callbackGetthings (cb) {
   const uid = 7
 
   const resPromise = userData.findAll({
@@ -67,12 +75,15 @@ function callbackGetthings () {
     }
   })
 
-  setTimeout(function () {
-    resPromise.then(data => {
-      console.log('res3 result:')
-      console.log(data)
-    })
+  cb(resPromise); 
+}
+
+
+function getData(promise){
+  promise.then(data => {
+    console.log(data);
   })
 }
 
-callbackGetthings()
+
+callbackGetthings(getData);
