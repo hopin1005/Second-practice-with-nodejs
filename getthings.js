@@ -75,14 +75,12 @@ function callbackGetthings (cb) {
     }
   })
 
-  cb(resPromise); 
+  resPromise.then(data => cb(data));
 }
 
 
-function getData(promise){
-  promise.then(data => {
-    console.log(data);
-  })
+function getData(data){
+  console.log(data)
 }
 
 
